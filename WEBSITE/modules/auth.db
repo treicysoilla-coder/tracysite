@@ -1,0 +1,8 @@
+<?php
+session_start();
+// Redirect to login if not logged in or not staff
+if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'staff') {
+    header("Location: /login.php");
+    exit();
+}
+?>
